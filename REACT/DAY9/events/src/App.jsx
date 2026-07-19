@@ -1,21 +1,40 @@
 import React, { useState } from "react";
 
-const App = () => {
-  const [count, setCount] = useState("false");
+function App() {
+ const [name, setName] = useState("");
 
-  const handleClick = () => {
-    setCount( "react native" );
+
+  const [use, setUsers] = useState("");
+
+  const handleChange =()=> {
+   
+
+   setUsers(name);
+    setName("");
+
+
+   
+
   };
 
   return (
-    <>
-      <h1>Count: {count}</h1>
+    <div>
+      
+      <input
+     type="text"
+          
+     onChange={(e) => setName(e.target.value)} placeholder="Enter name" />
+        <button type="submit" onClick={handleChange}>CHANGE</button>
+      
 
-      <button onClick={handleClick}>
-        TRUE OR FALSE
-      </button>
-    </>
+      <p>{use}</p>
+
+    </div>
+      
   );
-};
+}
 
 export default App;
+
+
+
