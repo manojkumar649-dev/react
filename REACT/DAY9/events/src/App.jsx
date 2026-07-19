@@ -1,40 +1,18 @@
-import React, { useState } from "react";
+import React from 'react'
+import { useState } from 'react'
 
-function App() {
- const [name, setName] = useState("");
+const App = () => {
 
-
-  const [use, setUsers] = useState("");
-
-  const handleChange =()=> {
-   
-
-   setUsers(name);
-    setName("");
-
-
-   
-
-  };
-
+  const [skill, setSkills] = useState("python")
   return (
     <div>
-      
-      <input
-     type="text"
-          
-     onChange={(e) => setName(e.target.value)} placeholder="Enter name" />
-        <button type="submit" onClick={handleChange}>CHANGE</button>
-      
 
-      <p>{use}</p>
+         <h1>{skill}</h1>
 
-    </div>
-      
-  );
+
+      <button className='bg-amber-600' onClick={() => setSkills("react")}>onclick</button>
+  </div>
+  )
 }
 
-export default App;
-
-
-
+export default App
