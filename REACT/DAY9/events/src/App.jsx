@@ -3,14 +3,22 @@ import { useState } from 'react'
 
 const App = () => {
 
-  const [skill, setSkills] = useState("python")
+  const [data, setData] = useState("")
+      
+    const handleChange=(e)=>{
+      setData(e.target.value)
+    }
   return (
     <div>
+       <h1>{data}</h1>
 
-         <h1>{skill}</h1>
+     <form>
+
+      <input   type="text" value={data} onChange={handleChange} placeholder='Enter data'/>
+     </form>
+      <button onClick={(e) => setData("")}>click</button>
 
 
-      <button className='bg-amber-600' onClick={() => setSkills("react")}>onclick</button>
   </div>
   )
 }
